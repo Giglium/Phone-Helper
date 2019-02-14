@@ -1,0 +1,197 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-02-12 23:01+CET\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Giglium \n"
+"Language-Team: EN \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: UTF-8\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: views/it/files.html:8 views/it/files.html:38 views/it/files.html:65
+#: views/it/index.html:34 views/it/settings.html:34 views/it/upload.html:34
+msgid "files"
+msgstr "File"
+
+#: views/it/files.html:34 views/it/files.html:116 views/it/files.html:145
+#: views/it/files.html:179 views/it/index.html:31 views/it/settings.html:31
+#: views/it/upload.html:31
+msgid "actions"
+msgstr "Azioni"
+
+#: views/it/files.html:36 views/it/index.html:32 views/it/index.html:68
+#: views/it/settings.html:32 views/it/upload.html:32
+msgid "home"
+msgstr "Home"
+
+#: views/it/files.html:37 views/it/index.html:33 views/it/settings.html:33
+#: views/it/upload.html:8 views/it/upload.html:33 views/it/upload.html:62
+msgid "upload"
+msgstr "Upload"
+
+#: views/it/files.html:39 views/it/index.html:35 views/it/settings.html:8
+#: views/it/settings.html:35 views/it/settings.html:62 views/it/upload.html:35
+msgid "settings"
+msgstr "Impostazioni"
+
+#: views/it/files.html:42 views/it/index.html:39 views/it/settings.html:39
+#: views/it/upload.html:39
+msgid "language"
+msgstr "Lingua"
+
+#: views/it/files.html:44 views/it/index.html:41 views/it/settings.html:41
+#: views/it/upload.html:41
+msgid "english"
+msgstr "Inglese"
+
+#: views/it/files.html:45 views/it/index.html:42 views/it/settings.html:42
+#: views/it/upload.html:42
+msgid "italian"
+msgstr "Italiano"
+
+#: views/it/files.html:84 views/it/settings.html:82 views/it/upload.html:82
+msgid "success"
+msgstr "Successo"
+
+#: views/it/files.html:85
+msgid "The conversion has ended successful."
+msgstr "La conversione è finita con successo."
+
+#: views/it/files.html:95
+msgid "input"
+msgstr "Input"
+
+#: views/it/files.html:99
+msgid "output"
+msgstr "Output"
+
+#: views/it/files.html:103
+msgid "archive"
+msgstr "Archivio"
+
+#: views/it/files.html:107
+msgid "convert"
+msgstr "Converti"
+
+#: views/it/files.html:115
+msgid "files to process"
+msgstr "File da processare"
+
+#: views/it/files.html:126 views/it/files.html:155 views/it/files.html:189
+msgid "download"
+msgstr "Download"
+
+#: views/it/files.html:131 views/it/files.html:160 views/it/files.html:194
+msgid "delete"
+msgstr "Elimina"
+
+#: views/it/files.html:144
+msgid "files processed"
+msgstr "File processati"
+
+#: views/it/files.html:166 views/it/files.html:213
+msgid "statistics"
+msgstr "Statistiche"
+
+#: views/it/files.html:178
+msgid "original files"
+msgstr "File Originali"
+
+#: views/it/files.html:216
+msgid "valid numbers:"
+msgstr "Numeri validi:"
+
+#: views/it/files.html:217
+msgid "discard's numbers:"
+msgstr "Numeri scartati:"
+
+#: views/it/files.html:220
+msgid "close"
+msgstr "Chiudi"
+
+#: views/it/index.html:88
+msgid "warning"
+msgstr "Attenzione"
+
+#: views/it/index.html:89
+msgid "please, go to the settings page and fill all fields"
+msgstr "Per piacere, vai nella pagina impostazione e riempi tutti i campi"
+
+#: views/it/index.html:104
+msgid "upload a file"
+msgstr "Carica un file"
+
+#: views/it/index.html:113
+msgid "file list"
+msgstr "Lista di file"
+
+#: views/it/index.html:122
+msgid "application settings"
+msgstr "Impostazioni dell'applicazione"
+
+#: views/it/settings.html:83
+msgid "settings was successfully saved."
+msgstr "Le impostazioni sono state salvate."
+
+#: views/it/settings.html:94
+msgid "to discard phone numbers prefix"
+msgstr "Prefisso dei numeri da scartare"
+
+#: views/it/settings.html:99
+msgid "ex. 00,10,020"
+msgstr "ex. 00,10,020"
+
+#: views/it/settings.html:102
+msgid "columns header title"
+msgstr "Titolo delle colonne"
+
+#: views/it/settings.html:107
+msgid "ex. number,cellular,phone number"
+msgstr "ex. telefono, cellulare, numero fisso"
+
+#: views/it/settings.html:110
+msgid "shifter"
+msgstr "Shifter"
+
+#: views/it/settings.html:118
+msgid "Valid number sheet name"
+msgstr "Nome del foglio per i numeri validi"
+
+#: views/it/settings.html:125
+msgid "Discarded's numbers sheet name"
+msgstr "Nome del foglio per i numeri scartati"
+
+#: views/it/settings.html:132
+msgid "create discard's sheet"
+msgstr "Creare il foglio dei numeri scartati"
+
+#: views/it/settings.html:140
+msgid "save settings"
+msgstr "Salva impostazioni"
+
+#: views/it/upload.html:83
+msgid "files were uploaded successfully."
+msgstr "I file sono stati caricati con successo."
+
+#: views/it/upload.html:93
+msgid "error"
+msgstr "Errore"
+
+#: views/it/upload.html:94
+msgid "it appears we dont support one or more of this file format(only .xls and .xlsx file are allowed)."
+msgstr "Sembra che non supportiamo uno o piú formati di file(solo .xls e .xlsx sono ammessi)"
+
+#: views/it/upload.html:102
+msgid "upload your files"
+msgstr "Carica un tuo file"
+
+#: views/it/upload.html:105
+msgid "upload files"
+msgstr "Caria un file"
+

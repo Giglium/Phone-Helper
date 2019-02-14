@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!doctype html>
+<html class="no-js" lang="{{lang()}}">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{_('files')}} | Phone Helper</title>
+    <meta name="description" content="Phone Helper show files page">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{{ get_url('static', filename='images/favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ get_url('static', filename='style.min.css') }}"/>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+<div id="overlay">
+    <div id="loader"></div>
+</div>
+
+<aside id="left-panel" class="left-panel">
+    <nav class="navbar navbar-expand-sm navbar-default">
+        <div class="navbar-header">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
+                    aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation"><i
+                    class="fa fa-bars"></i></button>
+            <a class="navbar-brand"
+               href="./"><img src="{{ get_url('static', filename='images/logo.png') }}" alt="Logo"></a>
+            <a class="navbar-brand hidden" href="./"><img src="{{ get_url('static', filename='images/logo2.png') }}"
+                                                          alt="Logo"></a>
+        </div>
+        <div id="main-menu" class="main-menu collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <h3 class="menu-title">{{_('actions')}}</h3>
+                <li><a href="index"><i class="menu-icon fa fa-phone"></i>{{_('home')}}</a></li>
+                <li><a href="upload"><i class="menu-icon fa fa-upload"></i>{{_('upload')}}</a></li>
+                <li class="active"><a href="files"><i class="menu-icon fa fa-file"></i>{{_('files')}}</a></li>
+                <li><a href="settings"><i class="menu-icon fa fa-cog"></i>{{_('settings')}}</a></li>
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false"><i class="menu-icon fa fa-globe"></i>{{_('language')}}</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-gbp"></i><a href="en/index">{{_('english')}}</a></li>
+                        <li><i class="fa fa-eur"></i><a href="it/index">{{_('italian')}}</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</aside>
+<div id="right-panel" class="right-panel">
+
+    <header id="header" class="header">
+        <div class="header-menu">
+            <div class="col-sm-7"><a id="menuToggle" class="menutoggle pull-left"><i class="fa fa-compress"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="col-sm-4">
+            <div class="page-header float-left">
+                <div class="page-title">
+                    <h1>{{_('files')}}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <p class="h1">
+                        <a href="/shutdown"><i class="fa fa-power-off" aria-hidden="true"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content mt-3">
+        % if success:
+        <div class="col-sm-12">
+            <div class="alert  alert-success alert-dismissible fade show" role="alert"><span
+                    class="badge badge-pill badge-success">{{_('success')}}</span>
+                    {{_('The conversion has ended successful.')}}
+                    <button type="button" class="close" data-dismiss="alert"
+                        aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+        </div>
+        % end
+        <div class="col-sm-12">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="input-tab" data-toggle="tab" href="#input" role="tab"
+                       aria-controls="home" aria-selected="true">{{_('input')}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="output-tab" data-toggle="tab" href="#output" role="tab"
+                       aria-controls="profile" aria-selected="false">{{_('output')}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="archive-tab" data-toggle="tab" href="#archive" role="tab"
+                       aria-controls="profile" aria-selected="false">{{_('archive')}}</a>
+                </li>
+                <li class="nav-item ml-auto">
+                    <a href="/job" onclick="addLoader()" class="btn btn-outline-secondary"><i
+                            class="fa fa-lightbulb-o"></i>&nbsp; {{_('convert')}}</a>
+                </li>
+            </ul>
+            <div class="tab-content pl-3 p-1" id="myTabContent">
+                <div class="tab-pane fade show active" id="input" role="tabpanel" aria-labelledby="home-tab">
+                    <table class="table">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">{{_('files to process')}}</th>
+                            <th scope="col">{{_('actions')}}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        % for file in input_files:
+                        <tr>
+                            <td>{{file}}</td>
+                            <td>
+                                <a href="{{ get_url('download', filename = 'input/' + file) }}" target="_blank">
+                                    <button type="button" class="btn btn-outline-primary btn-sm">
+                                        <i class="fa fa-download"></i>&nbsp; {{_('download')}}
+                                    </button>
+                                </a>
+                                <a href="delete/input/{{file}}">
+                                    <button type="button" class="btn btn btn-outline-danger btn-sm"><i
+                                            class="fa fa-trash"></i>&nbsp; {{_('delete')}}
+                                    </button>
+                                </a>
+                            </td>
+                        </tr>
+                        % end
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="output" role="tabpanel" aria-labelledby="profile-tab">
+                    <table class="table">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">{{_('files processed')}}</th>
+                            <th scope="col">{{_('actions')}}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        % for file in output_files:
+                        <tr>
+                            <td>{{file}}</td>
+                            <td>
+                                <a href="{{ get_url('download', filename = 'output/' + file) }}" target="_blank">
+                                    <button type="button" class="btn btn-outline-primary btn-sm"><i
+                                            class="fa fa-download"></i>&nbsp; {{_('download')}}
+                                    </button>
+                                </a>
+                                <a href="delete/output/{{file}}">
+                                    <button type="button" class="btn btn btn-outline-danger btn-sm"><i
+                                            class="fa fa-trash"></i>&nbsp; {{_('delete')}}
+                                    </button>
+                                </a>
+                                <button type="button" onclick="getStatistics('{{file}}')"
+                                        class="btn btn-outline-success btn-sm" data-toggle="modal"
+                                        data-target="#statistic"><i class="fa fa-calculator"></i>&nbsp;
+                                        {{_('statistics')}}
+                                </button>
+                            </td>
+                        </tr>
+                        % end
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="archive" role="tabpanel" aria-labelledby="profile-tab">
+                    <table class="table">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">{{_('original files')}}</th>
+                            <th scope="col">{{_('actions')}}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        % for file in archive_files:
+                        <tr>
+                            <td>{{file}}</td>
+                            <td>
+                                <a href="{{ get_url('download', filename = 'archive/' + file) }}" target="_blank">
+                                    <button type="button" class="btn btn-outline-primary btn-sm">
+                                        <i class="fa fa-download"></i>&nbsp; {{_('download')}}
+                                    </button>
+                                </a>
+                                <a href="delete/archive/{{file}}">
+                                    <button type="button" class="btn btn btn-outline-danger btn-sm"><i
+                                            class="fa fa-trash"></i>&nbsp; {{_('delete')}}
+                                    </button>
+                                </a>
+                            </td>
+                        </tr>
+                        % end
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="statistic" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{_('statistics')}}</h4>
+                </div>
+                <div class="modal-body">
+                    <p>{{_('valid numbers:')}} <span id="validNumber"></span></p>
+                    <p>{{_("discard's numbers:")}} <span id="discardNumber"></span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{{_('close')}}</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="{{ get_url('static', filename='script.min.js') }}"></script>
+</body>
+
+</html>

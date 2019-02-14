@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!doctype html>
+<html class="no-js" lang="{{lang()}}">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{_('settings')}} | Phone Helper</title>
+    <meta name="description" content="Phone Helper settings page">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{{ get_url('static', filename='images/favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ get_url('static', filename='style.min.css') }}"/>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+<aside id="left-panel" class="left-panel">
+    <nav class="navbar navbar-expand-sm navbar-default">
+        <div class="navbar-header">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
+                    aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand"
+               href="./"><img src="{{ get_url('static', filename='images/logo.png') }}" alt="Logo"></a>
+            <a class="navbar-brand hidden" href="./"><img src="{{ get_url('static', filename='images/logo2.png') }}"
+                                                          alt="Logo"></a>
+        </div>
+        <div id="main-menu" class="main-menu collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <h3 class="menu-title">{{_('actions')}}</h3>
+                <li><a href="index"><i class="menu-icon fa fa-phone"></i>{{_('home')}}</a></li>
+                <li><a href="upload"><i class="menu-icon fa fa-upload"></i>{{_('upload')}}</a></li>
+                <li><a href="files"><i class="menu-icon fa fa-file"></i>{{_('files')}}</a></li>
+                <li class="active"><a href="settings"><i class="menu-icon fa fa-cog"></i>{{_('settings')}}</a></li>
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                       <i class="menu-icon fa fa-globe"></i>{{_('language')}}</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-gbp"></i><a href="en/index">{{_('english')}}</a></li>
+                        <li><i class="fa fa-eur"></i><a href="it/index">{{_('italian')}}</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</aside>
+<div id="right-panel" class="right-panel">
+
+    <header id="header" class="header">
+        <div class="header-menu">
+            <div class="col-sm-7"><a id="menuToggle" class="menutoggle pull-left"><i class="fa fa-compress"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="col-sm-4">
+            <div class="page-header float-left">
+                <div class="page-title">
+                    <h1>{{_('settings')}}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <p class="h1">
+                        <a href="/shutdown"><i class="fa fa-power-off" aria-hidden="true"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content mt-3">
+        % if success:
+        <div class="col-sm-12">
+            <div class="alert  alert-success alert-dismissible fade show" role="alert">
+                <span class="badge badge-pill badge-success">{{_('success')}}</span>
+                    {{_('settings was successfully saved.')}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;
+                </span></button>
+            </div>
+        </div>
+        % end
+        <div class="animated fadeIn">
+            <div class="card">
+                <div class="card-body card-block">
+                    <form method="post" action="/save" onsubmit="return validateForm()" id="save">
+                        <div class="form-group">
+                            <label class=" form-control-label">{{_('to discard phone numbers prefix')}}</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-phone"></i></div>
+                                <input class="form-control" name="phonePrefix" value="{{data['phonePrefix']}}" required>
+                            </div>
+                            <small class="form-text text-muted">{{_("ex. 00,10,020")}}</small>
+                        </div>
+                        <div class="form-group">
+                            <label class=" form-control-label">{{_('columns header title')}}</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-columns"></i></div>
+                                <input class="form-control" name="columsTitle" value="{{data['columsTitle']}}" required>
+                            </div>
+                            <small class="form-text text-muted">{{_("ex. number,cellular,phone number")}}</small>
+                        </div>
+                        <div class="form-group">
+                            <label class=" form-control-label">{{_('shifter')}}</label>
+                            <label class="switch switch-text switch-success switch-pill">
+                                <input type="checkbox" name="shifter" class="switch-input"
+                                    {{'checked="checked"' if data['shifter'] else ""}}>
+                                <span data-on="On" data-off="Off" class="switch-label"></span>
+                                <span class="switch-handle"></span></label>
+                        </div>
+                        <div class="form-group">
+                            <label class=" form-control-label">{{_('Valid number sheet name')}}</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-check"></i></div>
+                                <input class="form-control" name="validName" value="{{data['validName']}}" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class=" form-control-label">{{_("Discarded's numbers sheet name")}}</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-times"></i></div>
+                                <input class="form-control" name="discardName" value="{{data['discardName']}}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class=" form-control-label">{{_("create discard's sheet")}}</label>
+                            <label class="switch switch-text switch-success switch-pill">
+                                <input type="checkbox" name="createDiscardSheet" class="switch-input"
+                                    {{'checked="checked"' if data['createDiscardSheet'] else ""}}>
+                                <span data-on="On" data-off="Off" class="switch-label"></span>
+                                <span class="switch-handle"></span></label>
+                        </div>
+                    </form>
+                    <button type="submit" form="save" class="btn btn-primary btn-lg btn-block">{{_('save settings')}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{ get_url('static', filename='script.min.js') }}"></script>
+</body>
+
+</html>

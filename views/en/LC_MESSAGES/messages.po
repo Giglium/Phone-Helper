@@ -1,0 +1,197 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-02-12 23:01+CET\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Giglium \n"
+"Language-Team: EN \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: UTF-8\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: views/en/files.html:8 views/en/files.html:38 views/en/files.html:65
+#: views/en/index.html:34 views/en/settings.html:34 views/en/upload.html:34
+msgid "files"
+msgstr "Files"
+
+#: views/en/files.html:34 views/en/files.html:116 views/en/files.html:145
+#: views/en/files.html:179 views/en/index.html:31 views/en/settings.html:31
+#: views/en/upload.html:31
+msgid "actions"
+msgstr "Actions"
+
+#: views/en/files.html:36 views/en/index.html:32 views/en/index.html:68
+#: views/en/settings.html:32 views/en/upload.html:32
+msgid "home"
+msgstr "Home"
+
+#: views/en/files.html:37 views/en/index.html:33 views/en/settings.html:33
+#: views/en/upload.html:8 views/en/upload.html:33 views/en/upload.html:62
+msgid "upload"
+msgstr "Upload"
+
+#: views/en/files.html:39 views/en/index.html:35 views/en/settings.html:8
+#: views/en/settings.html:35 views/en/settings.html:62 views/en/upload.html:35
+msgid "settings"
+msgstr "Settings"
+
+#: views/en/files.html:42 views/en/index.html:39 views/en/settings.html:39
+#: views/en/upload.html:39
+msgid "language"
+msgstr "Language"
+
+#: views/en/files.html:44 views/en/index.html:41 views/en/settings.html:41
+#: views/en/upload.html:41
+msgid "english"
+msgstr "English"
+
+#: views/en/files.html:45 views/en/index.html:42 views/en/settings.html:42
+#: views/en/upload.html:42
+msgid "italian"
+msgstr "Italian"
+
+#: views/en/files.html:84 views/en/settings.html:82 views/en/upload.html:82
+msgid "success"
+msgstr "Success"
+
+#: views/en/files.html:85
+msgid "The conversion has ended successful."
+msgstr "The conversion has ended successful."
+
+#: views/en/files.html:95
+msgid "input"
+msgstr "Input"
+
+#: views/en/files.html:99
+msgid "output"
+msgstr "Output"
+
+#: views/en/files.html:103
+msgid "archive"
+msgstr "Archive"
+
+#: views/en/files.html:107
+msgid "convert"
+msgstr "Convert"
+
+#: views/en/files.html:115
+msgid "files to process"
+msgstr "Files to precess"
+
+#: views/en/files.html:126 views/en/files.html:155 views/en/files.html:189
+msgid "download"
+msgstr "Download"
+
+#: views/en/files.html:131 views/en/files.html:160 views/en/files.html:194
+msgid "delete"
+msgstr "Delete"
+
+#: views/en/files.html:144
+msgid "files processed"
+msgstr "Files processed"
+
+#: views/en/files.html:166 views/en/files.html:213
+msgid "statistics"
+msgstr "statistics"
+
+#: views/en/files.html:178
+msgid "original files"
+msgstr "Original files"
+
+#: views/en/files.html:216
+msgid "valid numbers:"
+msgstr "Valid numbers:"
+
+#: views/en/files.html:217
+msgid "discard's numbers:"
+msgstr "Discard's numbers:"
+
+#: views/en/files.html:220
+msgid "close"
+msgstr "Close"
+
+#: views/en/index.html:88
+msgid "warning"
+msgstr "Warning"
+
+#: views/en/index.html:89
+msgid "please, go to the settings page and fill all fields"
+msgstr "Please, go to the settings page and fill all fields."
+
+#: views/en/index.html:104
+msgid "upload a file"
+msgstr "Upload a file"
+
+#: views/en/index.html:113
+msgid "file list"
+msgstr "File list"
+
+#: views/en/index.html:122
+msgid "application settings"
+msgstr "Application settings"
+
+#: views/en/settings.html:83
+msgid "settings was successfully saved."
+msgstr "Settings was successfully saved."
+
+#: views/en/settings.html:94
+msgid "to discard phone numbers prefix"
+msgstr "To discard phone numbers prefix"
+
+#: views/en/settings.html:99
+msgid "ex. 00,10,020"
+msgstr "ex. 00,10,020"
+
+#: views/en/settings.html:102
+msgid "columns header title"
+msgstr "Columns header title"
+
+#: views/en/settings.html:107
+msgid "ex. number,cellular,phone number"
+msgstr "ex. number,cellular,phone number"
+
+#: views/en/settings.html:110
+msgid "shifter"
+msgstr "Shifter"
+
+#: views/en/settings.html:118
+msgid "Valid number sheet name"
+msgstr "Valid number sheet name"
+
+#: views/en/settings.html:125
+msgid "Discarded's numbers sheet name"
+msgstr "Discarded's numbers sheet name"
+
+#: views/en/settings.html:132
+msgid "create discard's sheet"
+msgstr "Create discard's sheet"
+
+#: views/en/settings.html:140
+msgid "save settings"
+msgstr "Save settings"
+
+#: views/en/upload.html:83
+msgid "files were uploaded successfully."
+msgstr "Files were uploaded successfully."
+
+#: views/en/upload.html:93
+msgid "error"
+msgstr "Error"
+
+#: views/en/upload.html:94
+msgid "it appears we dont support one or more of this file format(only .xls and .xlsx file are allowed)."
+msgstr "It appears we dont support one or more of this file format(only .xls and .xlsx file are allowed)."
+
+#: views/en/upload.html:102
+msgid "upload your files"
+msgstr "Upload your files"
+
+#: views/en/upload.html:105
+msgid "upload files"
+msgstr "Upload files"
+

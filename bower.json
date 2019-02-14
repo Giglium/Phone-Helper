@@ -1,0 +1,16 @@
+{
+  "name": "phone-helper",
+  "homepage": "https://github.com/Giglium/Phone-Helper",
+  "authors": [
+    "Giglium"
+  ],
+  "description": "An web application for scrapping an .xls/.xlsx file with some columns with phone numbers and it will discard all the row with a wrong number or that with a given prefix.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    ""
+  ],
+  "devDependencies": {
+    "sufee-admin-dashboard": "git://github.com/puikinsh/sufee-admin-dashboard.git"
+  }
+}

@@ -1,0 +1,40 @@
+language: node_js
+
+node_js:
+  - "iojs"
+
+os:
+  - linux
+
+sudo: true
+
+dist: trusty
+
+cache:
+  timeout: 500
+  directories:
+    - node_modules
+
+git:
+  depth: false
+  submodules: false
+
+before_install:
+  - npm install -g grunt-cli
+  - npm install -g bower
+
+install:
+    - npm install
+    - bower install
+
+script:
+  - grunt
+
+branches:
+  only:
+    master
+
+notifications:
+  email:
+    on_success: always
+    on_failure: always

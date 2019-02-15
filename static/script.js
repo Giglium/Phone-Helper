@@ -5,9 +5,9 @@ function addLoader(){
 
 function getStatistics(filename){
     $.get( "/statistic/" + filename, function( data ) {
-        if(!data['error']){
-          document.getElementById('validNumber').innerHTML = data['validNumber'];
-          document.getElementById('discardNumber').innerHTML = data['discardNumber'];
+        if(!data["error"]){
+          document.getElementById("validNumber").textContent = data["validNumber"];
+          document.getElementById("discardNumber").textContent = data["discardNumber"];
         }
     });
 }
@@ -19,17 +19,17 @@ function validateForm(){
 
   if(phonePrefix[phonePrefix.length - 1] === ""
     || phonePrefix[phonePrefix.length - 1] === " "){
-    document.getElementsByName('phonePrefix')[0].style.borderColor = "red";
+    document.getElementsByName("phonePrefix")[0].style.borderColor = "red";
     error = true;
   }else{
-    document.getElementsByName('phonePrefix')[0].style.borderColor = "#ced4da";
+    document.getElementsByName("phonePrefix")[0].style.borderColor = "#ced4da";
   }
 
-  if($(form['createDiscardSheet']).val() === "on" && form["discardName"].value === ""){
-    document.getElementsByName('discardName')[0].style.borderColor = "red";
+  if($(form["createDiscardSheet"]).val() === "on" && form["discardName"].value === ""){
+    document.getElementsByName("discardName")[0].style.borderColor = "red";
     error = true;
   }else{
-    document.getElementsByName('discardName')[0].style.borderColor = "#ced4da";
+    document.getElementsByName("discardName")[0].style.borderColor = "#ced4da";
   }
 
   return !error;

@@ -1,8 +1,8 @@
 #!/usr/bin/python
 
-import bottle, os, sys, json, pathlib, webbrowser
+import bottle, sys
 from bottle.ext.i18n import I18NPlugin, I18NMiddleware, i18n_defaults, i18n_view, i18n_template
-from bottle import Bottle, run, route, static_file, view, template, post, request
+from bottle import Bottle, run, route, static_file, request
 from phone_helper import PhoneHelper
 
 phone_helper = PhoneHelper()
@@ -103,11 +103,11 @@ def get():
         return static_file(filename, root=phone_helper.STATIC_FOLDER)
 
     @app.route('/fonts/<filename>', name='fonts')
-    def server_static(filename):
+    def server_font(filename):
         return static_file(filename, root=phone_helper.FONTS_DIR)
 
     @app.route('/download/<filename:path>', name='download')
-    def input_download(filename):
+    def server_download(filename):
         return static_file(filename, root=phone_helper.PARENT_FOLDER, download=True)
 
     bottle.SimpleTemplate.defaults["get_url"] = app.get_url

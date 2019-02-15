@@ -6,23 +6,28 @@ An web application for scrapping an `.xls`/`.xlsx` file with some columns with p
 
 ## Prerequisites
 
-* [npm](https://www.npmjs.com/)
-* [grunt](https://gruntjs.com/)
-* [bower](https://bower.io/)
-* [python 3.X](https://www.python.org/)
+*   [npm](https://www.npmjs.com/)
+*   [grunt](https://gruntjs.com/)
+*   [bower](https://bower.io/)
+*   [python 3.X](https://www.python.org/)
 
 ## Install
 
-* `git clone`
-* `bower install`
-* `npm install`
-* `grunt`
+```sh
+git clone https://github.com/Giglium/Phone-Helper.git
+cd Phone-Helper
+bower install
+npm install
+grunt
+```
 
 ## Run
 
-`python webapp.py `
+```sh
+python webapp.py
+```
 
 ## License
 
-* [MIT License](https://opensource.org/licenses/MIT)
+[MIT License](https://opensource.org/licenses/MIT)
 

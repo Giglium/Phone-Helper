@@ -181,7 +181,6 @@ class PhoneHelper:
             workbook.save(self.OUTPUT_DIR + "/" + filename + ".xls")
 
             statistic = {'validNumber': valid_number, 'discardNumber': discard_number}
-            
             with open(self.OUTPUT_DIR + "/" + filename + ".json", 'w') as f:
                 f.write(json.dumps(statistic))
 
